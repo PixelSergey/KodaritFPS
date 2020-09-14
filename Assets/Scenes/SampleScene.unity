@@ -504,9 +504,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ea5e2d340580e7e4c992414f20bf42f2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  mouseSensitivity: 10
+  mouseSensitivity: 100
   mouseX: 0
   mouseY: 0
   cameraTransform: {fileID: 963194228}
   maxX: 50
   minX: -50
+  xRotation: 0
