@@ -624,7 +624,7 @@ MonoBehaviour:
   mouseSensitivity: 100
   mouseX: 0
   mouseY: 0
-  cameraTransform: {fileID: 963194228}
+  cameraTransform: {fileID: 119582668}
   maxX: 50
   minX: -50
   xRotation: 0
