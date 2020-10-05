@@ -28,10 +28,24 @@ public class PlayerMove : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        isOnGround = Physics.CheckSphere(groundCheck.position, groundDistance, groundMask);
+
         float horizontal = Input.GetAxis("Horizontal");
         float vertical = Input.GetAxis("Vertical");
 
         move = transform.right * horizontal + transform.forward * vertical;
         playerController.Move(move * moveSpeed * Time.deltaTime);
+
+        if(isOnGround && Input.GetButtonDown("Jump")){
+            velocity.y = Mathf.Sqrt(-2f * gravity * jumpHeight);
+        }
+
+        velocity.y = velocity.y + gravity * Time.deltaTime;
+        playerController.Move(velocity * Time.deltaTime);
+    }
+
+    private void OnDrawGizmosSelected(){
+        Gizmos.color = Color.yellow;
+        Gizmos.DrawWireSphere(groundCheck.position, groundDistance);
     }
 }
