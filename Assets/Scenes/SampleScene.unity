@@ -301,9 +301,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4128f4cc0d8f32542b01d137c8563219, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  shootForce: 10
+  shootForce: 50
   bulletPrefab: {fileID: 5751972257829711585, guid: d764f2e190890f042ac12ed846ebbbec,
     type: 3}
+  bullet: {fileID: 0}
+  holdStart: 0
+  maxHoldTime: 2
 --- !u!1 &571836107
 GameObject:
   m_ObjectHideFlags: 0
