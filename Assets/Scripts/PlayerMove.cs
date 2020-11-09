@@ -11,6 +11,8 @@ public class PlayerMove : MonoBehaviour
 
     [Header("Pelaajan parametrit")]
     public float moveSpeed = 8f;
+    public float walkSpeed = 8f;
+    public float runSpeed = 16f;
     public float jumpHeight = 3f;
     public float gravity = -9.81f;
     public float groundDistance = 0.4f;
@@ -28,6 +30,13 @@ public class PlayerMove : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if(Input.GetButtonDown("Fire3")){
+            moveSpeed = runSpeed;
+        }
+        if(Input.GetButtonUp("Fire3")){
+            moveSpeed = walkSpeed;
+        }
+
         isOnGround = Physics.CheckSphere(groundCheck.position, groundDistance, groundMask);
 
         float horizontal = Input.GetAxis("Horizontal");
