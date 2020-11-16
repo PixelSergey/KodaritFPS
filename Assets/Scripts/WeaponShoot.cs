@@ -10,6 +10,8 @@ public class WeaponShoot : MonoBehaviour
     public float holdStart;
     public float maxHoldTime = 2f;
     Camera playerCam;
+    public AudioSource speaker;
+    public AudioClip shootSound;
 
 
     // Start is called before the first frame update
@@ -23,6 +25,7 @@ public class WeaponShoot : MonoBehaviour
     {
         if(Input.GetButtonDown("Fire1")){
             holdStart = Time.time;
+            speaker.PlayOneShot(shootSound, 1f);
         }
 
         if(Input.GetButtonUp("Fire1")){
